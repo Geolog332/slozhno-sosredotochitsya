@@ -8,6 +8,7 @@
   --bg-color: #000028;
   --bg-image: url("../images/cover-image-dark.png");
   --rec-decor-element: #ff0070;
+  --decor-element-box: #ff0070;
   --logo-text-color: #db00ff;
   --logo-shadow-color: #ff0070;
   --bg-color-article-title: #ff0070;
@@ -24,18 +25,14 @@
   */
 }
 
-.decor-element {
-  position: relative;
-}
-
 .decor-element::before {
   content: "";
   position: absolute;
   z-index: -1;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-end: 1px solid var(--rec-decor-element);
-  border-block-start: 1px solid var(--rec-decor-element);
+  border-inline-end: 1px solid var(--decor-element-box);
+  border-block-start: 1px solid var(--decor-element-box);
   inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
   inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
 }
@@ -46,8 +43,8 @@
   z-index: -1;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-start: 1px solid var(--rec-decor-element);
-  border-block-end: 1px solid var(--rec-decor-element);
+  border-inline-start: 1px solid var(--decor-element-box);
+  border-block-end: 1px solid var(--decor-element-box);
   inset-inline-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
   inset-block-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
 }
