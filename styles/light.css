@@ -5,8 +5,98 @@
 */
 
 .page.theme_light {
+  --bg-color: #fff1f7;
+  --bg-image: url("../images/cover-image-light.png");
+  --rec-decor-element: transparent;
+  --logo-text-color: #ffc2e6;
+  --logo-shadow-color: #ff8dcb;
+  --bg-color-article-title: #ff8dcb;
+  --text-article: #353430;
+  --text-paragraph: #353430;
+  --text-shadow: #ff8dcb;
+  --content__title-color: #353430;
+  --button-color: #353430;
+  --button-border-hover: rgba(50, 49, 45, 0.4);
+  --outline-a: #353430;
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #fff1f7;
+    --bg-image: url("../images/cover-image-light.png");
+    --rec-decor-element: transparent;
+    --logo-text-color: #ffc2e6;
+    --logo-shadow-color: #ff8dcb;
+    --bg-color-article-title: #ff8dcb;
+    --text-article: #353430;
+    --text-paragraph: #353430;
+    --text-shadow: #ff8dcb;
+    --content__title-color: #353430;
+    --button-color: #353430;
+    --button-border-hover: rgba(50, 49, 45, 0.4);
+    --outline-a: #353430;
+  }
+}
+
+.decor-element {
+  position: relative;
+}
+
+.decor-element::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--rec-decor-element);
+  border-block-start: 1px solid var(--rec-decor-element);
+  inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.decor-element::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid var(--rec-decor-element);
+  border-block-end: 1px solid var(--rec-decor-element);
+  inset-inline-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  inset-block-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.rec-decor {
+  display: inline-flex;
+  position: absolute;
+  z-index: -1;
+  inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  visibility: visible;
+  gap: 10px;
+}
+
+.rec-decor::before {
+  content: "REC";
+  color: var(--rec-decor-element);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.rec-decor::after {
+  content: "";
+  display: inline-flex;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 2px var(--rec-decor-element);
+  background: var(--rec-decor-element);
+  width: 9px;
+  height: 9px;
+  margin-block-start: 8px;
+  margin-inline-end: 8px;
 }
