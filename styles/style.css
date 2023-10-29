@@ -21,6 +21,40 @@
   position: relative;
 }
 
+.decor-element::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--decor-element-box);
+  border-block-start: 1px solid var(--decor-element-box);
+  inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.decor-element::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-start: 1px solid var(--decor-element-box);
+  border-block-end: 1px solid var(--decor-element-box);
+  inset-inline-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  inset-block-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+}
+
+.rec-decor {
+  display: inline-flex;
+  position: absolute;
+  z-index: -1;
+  inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  visibility: visible;
+  gap: 10px;
+}
+
 .header__theme-menu {
   display: flex;
   justify-self: end;
@@ -45,6 +79,7 @@
 .header__theme-menu-button_active {
   border: 1px solid var(--button-color);
   border-color: currentColor;
+  pointer-events: none;
 }
 
 .header__subtitle {
@@ -231,27 +266,31 @@
   .item5 {
     grid-area: e;
   }
-}
 
-@media (width >=1024px) {
-  .title-page {
-    text-shadow: 4px 4px 0 var(--logo-shadow-color_1024);
+  @media (width >=1024px) {
+    .title-page {
+      text-shadow: 4px 4px 0 var(--logo-shadow-color_1024);
+    }
+
+    .header__theme-menu {
+      display: inline-flex;
+      justify-self: center;
+      align-items: start;
+    }
+
+    .header__theme-menu-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .content__text-block.second-section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
   }
 
-  .header__theme-menu {
-    display: inline-flex;
-    justify-self: center;
-    align-items: start;
-  }
 
-  .header__theme-menu-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
 
-  .content__text-block.second-section {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-}
+
+  
