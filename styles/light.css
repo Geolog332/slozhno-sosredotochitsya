@@ -46,39 +46,6 @@
   }
 }
 
-.decor-element::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inline-size: 25px;
-  block-size: 25px;
-  border-inline-end: 1px solid var(--decor-element-box);
-  border-block-start: 1px solid var(--decor-element-box);
-  inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
-  inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
-}
-
-.decor-element::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inline-size: 25px;
-  block-size: 25px;
-  border-inline-start: 1px solid var(--decor-element-box);
-  border-block-end: 1px solid var(--decor-element-box);
-  inset-inline-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
-  inset-block-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
-}
-
-.rec-decor {
-  display: inline-flex;
-  position: absolute;
-  z-index: -1;
-  inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
-  inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
-  visibility: visible;
-  gap: 10px;
-}
 
 .rec-decor::before {
   content: "REC";
